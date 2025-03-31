@@ -1,0 +1,117 @@
+#:kivy 2.2.1
+
+<MainScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.95, 0.95, 0.95, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(16)
+        spacing: dp(16)
+
+        MDLabel:
+            text: "潮汕麻将助手"
+            halign: "center"
+            theme_text_color: "Primary"
+            font_style: "H5"
+            size_hint_y: None
+            height: dp(48)
+
+        MDCard:
+            orientation: 'vertical'
+            padding: dp(16)
+            spacing: dp(8)
+            size_hint: None, None
+            size: dp(300), dp(120)
+            pos_hint: {'center_x': .5}
+            elevation: 2
+
+            MDLabel:
+                text: "游戏设置"
+                theme_text_color: "Primary"
+                font_style: "H6"
+                size_hint_y: None
+                height: dp(32)
+
+            Spinner:
+                id: game_spinner
+                text: '选择游戏'
+                values: '游戏A', '游戏B', '游戏C'
+                size_hint: None, None
+                size: dp(200), dp(48)
+                pos_hint: {'center_x': .5}
+
+        MDCard:
+            orientation: 'vertical'
+            padding: dp(16)
+            spacing: dp(8)
+            size_hint: None, None
+            size: dp(300), dp(160)
+            pos_hint: {'center_x': .5}
+            elevation: 2
+
+            MDLabel:
+                text: "功能开关"
+                theme_text_color: "Primary"
+                font_style: "H6"
+                size_hint_y: None
+                height: dp(32)
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: dp(48)
+
+                MDLabel:
+                    text: "智能出牌"
+                    theme_text_color: "Secondary"
+
+                MDSwitch:
+                    id: discard_switch
+                    active: True
+
+            BoxLayout:
+                orientation: 'horizontal'
+                size_hint_y: None
+                height: dp(48)
+
+                MDLabel:
+                    text: "智能选牌"
+                    theme_text_color: "Secondary"
+
+                MDSwitch:
+                    id: select_switch
+                    active: True
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: dp(16)
+            size_hint: None, None
+            size: dp(300), dp(48)
+            pos_hint: {'center_x': .5}
+
+            MDRaisedButton:
+                id: start_button
+                text: "开始"
+                size_hint: 0.5, None
+                height: dp(48)
+                md_bg_color: app.theme_cls.primary_color
+
+            MDRaisedButton:
+                id: permission_button
+                text: "权限设置"
+                size_hint: 0.5, None
+                height: dp(48)
+                md_bg_color: app.theme_cls.primary_color
+
+        MDLabel:
+            id: status_label
+            text: "就绪"
+            halign: "center"
+            theme_text_color: "Secondary"
+            size_hint_y: None
+            height: dp(48)

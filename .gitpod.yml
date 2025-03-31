@@ -1,0 +1,26 @@
+image: gitpod/workspace-full-vnc
+
+ports:
+  - port: 6080
+    onOpen: open-preview
+  - port: 5900
+    onOpen: ignore
+  - port: 35900
+    onOpen: ignore
+
+tasks:
+  - init: |
+      sudo apt-get update
+      sudo apt-get install -y python3-pip build-essential git python3-dev ffmpeg libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libportmidi-dev libswscale-dev libavformat-dev libavcodec-dev zlib1g-dev
+      pip3 install --upgrade pip
+      pip3 install -r requirements.txt
+      pip3 install -r requirements-app.txt
+      pip3 install buildozer cython
+      buildozer init
+    command: |
+      buildozer android debug
+
+vscode:
+  extensions:
+    - ms-python.python
+    - ms-python.vscode-pylance

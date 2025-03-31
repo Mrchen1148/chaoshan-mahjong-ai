@@ -1,0 +1,23 @@
+[app]
+title = Chaoshan Mahjong AI
+package.name = chaoshanmj
+package.domain = org.chaoshanmj
+source.dir = .
+source.include_exts = py,png,jpg,kv,atlas,ttf,json
+version = 0.1
+requirements = python3,kivy,kivymd,pillow,numpy,opencv-python
+orientation = portrait
+osx.python_version = 3
+osx.kivy_version = 2.2.1
+fullscreen = 0
+android.permissions = INTERNET,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,FOREGROUND_SERVICE,SYSTEM_ALERT_WINDOW
+android.api = 31
+android.minapi = 21
+android.sdk = 31
+android.ndk = 23.1.7779620
+android.private_storage = True
+android.accept_sdk_license = True
+android.arch = arm64-v8a
+p4a.branch = master
+p4a.bootstrap = sdl2
+android.allow_backup = True
